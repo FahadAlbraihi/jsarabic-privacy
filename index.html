@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سياسة الخصوصية — جافاسكربت بالعربي</title>
+<meta name="description" content="سياسة خصوصية تطبيق «جافاسكربت بالعربي»: لا جمع بيانات، ولا إذن إنترنت.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper:      #FBF7F0;
+    --paper-2:    #F3EDE2;
+    --ink:        #16233A;
+    --on-ink:     #F5F1E8;
+    --text:       #24303F;
+    --muted:      #5C6675;
+    --accent:     #8F5606;
+    --saffron:    #D9922B;
+    --hairline:   #E0D7C7;
+    --radius:     14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:    #101826;
+      --paper-2:  #16233A;
+      --ink:      #0B111C;
+      --on-ink:   #F5F1E8;
+      --text:     #E4E7EC;
+      --muted:    #9AA5B4;
+      --accent:   #E8AC4E;
+      --saffron:  #D9922B;
+      --hairline: #26344B;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--on-ink);
+    padding: 2.75rem 1.25rem 2.25rem;
+  }
+
+  header .wrap { padding: 0; max-width: 46rem; }
+
+  .eyebrow {
+    font-size: .82rem;
+    letter-spacing: .08em;
+    color: var(--saffron);
+    margin: 0 0 .4rem;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-family: "El Messiri", "IBM Plex Sans Arabic", serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    line-height: 1.3;
+    margin: 0 0 .5rem;
+    text-wrap: balance;
+  }
+
+  header p {
+    margin: 0;
+    color: #C9D1DD;
+    font-size: .95rem;
+  }
+
+  h2 {
+    font-family: "El Messiri", "IBM Plex Sans Arabic", serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 2.75rem 0 .75rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--hairline);
+    text-wrap: balance;
+  }
+
+  p { margin: 0 0 1rem; }
+
+  .lede {
+    background: var(--paper-2);
+    border-inline-start: 4px solid var(--saffron);
+    border-radius: var(--radius);
+    padding: 1.15rem 1.25rem;
+    margin: 0 0 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .lede strong { color: var(--accent); }
+
+  ul { margin: 0 0 1rem; padding-inline-start: 1.35rem; }
+  li { margin-bottom: .4rem; }
+
+  .table-scroll { overflow-x: auto; margin: 0 0 1.25rem; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 30rem;
+    font-size: .95rem;
+  }
+
+  th, td {
+    text-align: start;
+    padding: .7rem .85rem;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+  }
+
+  th {
+    background: var(--paper-2);
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: .88em;
+    background: var(--paper-2);
+    padding: .12em .4em;
+    border-radius: 5px;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: .9rem;
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .en {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 3px double var(--hairline);
+    direction: ltr;
+    text-align: left;
+  }
+
+  .en h2 { font-family: "IBM Plex Sans Arabic", system-ui, sans-serif; }
+  .en ul { padding-inline-start: 1.35rem; }
+
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--saffron); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">جافاسكربت بالعربي</p>
+    <h1>سياسة الخصوصية</h1>
+    <p>تطبيق أندرويد لتعلّم البرمجة — يعمل بلا إنترنت وبلا حساب.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="lede">
+    باختصار: هذا التطبيق <strong>لا يجمع أي بيانات عنك، ولا يرسل شيئاً إلى أي خادم</strong>.
+    وهو لا يملك إذن الإنترنت أصلاً، فلا يستطيع ذلك حتى لو أراد.
+  </p>
+
+  <h2>ما لا نجمعه</h2>
+  <p>
+    لا نجمع اسمك ولا بريدك ولا رقم هاتفك ولا موقعك ولا معرّف جهازك ولا
+    جهات اتصالك ولا أي بيانات استخدام أو تحليلات. ولا يوجد في التطبيق
+    حساب تُسجّل به أصلاً.
+  </p>
+
+  <h2>ما يُحفَظ في جهازك</h2>
+  <p>يحفظ التطبيق في التخزين الخاصّ به على جهازك:</p>
+  <ul>
+    <li>تقدّمك في الدروس</li>
+    <li>نقاطك وسلسلة أيامك وشاراتك</li>
+    <li>الكود الذي تكتبه وتحفظه في المختبر</li>
+    <li>تفضيلاتك: السِّمة ووقت التذكير</li>
+  </ul>
+  <p>
+    هذه البيانات لا تغادر جهازك، ولا يستطيع أحد غيرك الوصول إليها،
+    وتُحذف كلّها عند إزالة التطبيق.
+  </p>
+
+  <h2>الاتصال بالشبكة</h2>
+  <p>
+    التطبيق لا يطلب إذن الإنترنت (<code>INTERNET</code>) إطلاقاً، وهذا قيد
+    يفرضه نظام أندرويد نفسه لا وعدٌ منّا. وكل الدروس والأمثلة مشحونة
+    داخل التطبيق.
+  </p>
+
+  <h2>الأذونات المُعلَنة كاملةً</h2>
+  <p>
+    هذه كل الأذونات التي يعلنها التطبيق، ولا شيء غيرها. تستطيع التحقّق
+    بنفسك من صفحة التطبيق في المتجر:
+  </p>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>الإذن</th><th>لماذا</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>POST_NOTIFICATIONS</code></td>
+          <td>عرض التذكير اليومي. لا يُطلب منك إلا لحظة تفعيلك للتذكير، وإن رفضته عمل التطبيق كاملاً بلا تذكير.</td>
+        </tr>
+        <tr>
+          <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+          <td>إعادة جدولة التذكير بعد إعادة تشغيل الجهاز. لا يُقرأ به شيء ولا يُشغَّل التطبيق في الخلفية.</td>
+        </tr>
+        <tr>
+          <td><code>WAKE_LOCK</code></td>
+          <td>إبقاء المعالج مستيقظاً لأجزاء من الثانية أثناء فحص «هل درستَ اليوم؟».</td>
+        </tr>
+        <tr>
+          <td><code>ACCESS_NETWORK_STATE</code></td>
+          <td>تعلنه مكتبة جدولة المهامّ من جوجل (WorkManager) لنفسها. التطبيق لا يقرأ حالة الشبكة ولا يستطيع استعمالها، إذ لا إذن إنترنت لديه.</td>
+        </tr>
+        <tr>
+          <td><code>FOREGROUND_SERVICE</code></td>
+          <td>تعلنه المكتبة نفسها كذلك. هذا التطبيق لا يشغّل أي خدمة أمامية.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    الإذنان الأخيران يأتيان مع مكتبة الجدولة ولا يستعملهما التطبيق.
+    أبقيناهما ولم نحذفهما لأن حذف إذن تعتمد عليه مكتبة داخلياً يُسقطها
+    وقت التشغيل — وذِكرهما هنا أصدق من إخفائهما.
+  </p>
+
+  <h2>تشغيل الكود</h2>
+  <p>
+    الكود الذي تكتبه يُنفَّذ محلياً في بيئة معزولة داخل جهازك، بلا وصول
+    إلى ملفّاتك ولا إلى الشبكة ولا إلى بيانات التطبيقات الأخرى. ولا
+    يُرسَل كودك إلى أي مكان.
+  </p>
+
+  <h2>الإشعارات</h2>
+  <p>
+    إن فعّلت التذكير اليومي، يطلب التطبيق إذن الإشعارات. يُستعمل لعرض
+    تذكير واحد في اليوم على جهازك، ولا يُستعمل لشيء آخر. وتستطيع إيقافه
+    في أي وقت من إعدادات التطبيق أو من إعدادات النظام.
+  </p>
+
+  <h2>المشاركة</h2>
+  <p>
+    الزرّ الذي يشارك كودك يستعمل ورقة المشاركة القياسية في أندرويد، وأنت
+    من يختار الوجهة. التطبيق نفسه لا يرسل شيئاً.
+  </p>
+
+  <h2>الأطفال</h2>
+  <p>التطبيق لا يجمع بيانات من أي مستخدم، بغضّ النظر عن عمره.</p>
+
+  <h2>التغييرات</h2>
+  <p>
+    إن تغيّرت هذه السياسة، ستُحدَّث هذه الصفحة ويُذكر تاريخ التحديث في
+    أسفلها.
+  </p>
+
+  <h2>التواصل</h2>
+  <p>
+    للأسئلة حول الخصوصية، افتح مسألة (issue) في
+    <a href="https://github.com/FahadAlbraihi/jsarabic-privacy/issues">مستودع هذه الصفحة</a>.
+  </p>
+
+  <p class="updated">آخر تحديث: ٢١ أغسطس ٢٠٢٦</p>
+
+  <!-- ─────────────  English  ───────────── -->
+  <section class="en" lang="en">
+    <h2>Privacy Policy (English)</h2>
+
+    <p>
+      In short: this app <strong>collects no data about you and sends nothing to
+      any server</strong>. It does not hold the <code>INTERNET</code> permission
+      at all, so it could not do so even if it wanted to.
+    </p>
+
+    <p><strong>What we do not collect.</strong> No name, email, phone number,
+    location, device identifier, contacts, usage data, or analytics. There is no
+    account to sign in to.</p>
+
+    <p><strong>What is stored on your device.</strong> Your lesson progress,
+    points, day streak and badges, any code you save in the playground, and your
+    preferences (theme and reminder time). This data never leaves your device
+    and is deleted when you uninstall the app.</p>
+
+    <p><strong>Declared permissions.</strong> The complete list, and nothing
+    else:</p>
+    <ul>
+      <li><code>POST_NOTIFICATIONS</code> — the daily reminder. Requested only
+      when you turn the reminder on; the app works fully without it.</li>
+      <li><code>RECEIVE_BOOT_COMPLETED</code> — reschedules the reminder after a
+      device restart. Nothing is read, and the app is not started in the
+      background.</li>
+      <li><code>WAKE_LOCK</code> — keeps the CPU awake for a fraction of a second
+      while checking whether you already studied today.</li>
+      <li><code>ACCESS_NETWORK_STATE</code> — declared by Google's WorkManager
+      scheduling library for itself. The app does not read network state and
+      could not use it, having no internet permission.</li>
+      <li><code>FOREGROUND_SERVICE</code> — declared by the same library. This
+      app runs no foreground service.</li>
+    </ul>
+    <p>The last two come with the scheduling library and are unused by the app.
+    We kept them rather than removing them, because stripping a permission a
+    library depends on internally breaks it at runtime — and listing them here
+    is more honest than hiding them.</p>
+
+    <p><strong>Running code.</strong> Code you write executes locally in an
+    isolated environment on your device, with no access to your files, the
+    network, or other apps' data. Your code is never uploaded.</p>
+
+    <p><strong>Sharing.</strong> The share button uses Android's standard share
+    sheet; you choose the destination. The app itself sends nothing.</p>
+
+    <p><strong>Children.</strong> The app collects no data from any user,
+    regardless of age.</p>
+
+    <p><strong>Contact.</strong> For privacy questions, open an issue in
+    <a href="https://github.com/FahadAlbraihi/jsarabic-privacy/issues">this
+    page's repository</a>.</p>
+
+    <p class="updated">Last updated: 21 August 2026</p>
+  </section>
+
+</main>
+
+</body>
+</html>
