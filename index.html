@@ -197,7 +197,7 @@
   <ul>
     <li>تقدّمك في الدروس</li>
     <li>نقاطك وسلسلة أيامك وشاراتك</li>
-    <li>الكود الذي تكتبه وتحفظه في المختبر</li>
+    <li>الكود الذي تكتبه وتحفظه في المحرّر</li>
     <li>تفضيلاتك: السِّمة ووقت التذكير</li>
   </ul>
   <p>
@@ -244,14 +244,42 @@
           <td><code>FOREGROUND_SERVICE</code></td>
           <td>تعلنه المكتبة نفسها كذلك. هذا التطبيق لا يشغّل أي خدمة أمامية.</td>
         </tr>
+        <tr>
+          <td><code>com.android.vending.BILLING</code></td>
+          <td>إتمام شراء فتح المنهج عبر متجر Play. لا يُستعمل لشيء آخر، ولا يمنح وصولاً إلى الشبكة.</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <p>
-    الإذنان الأخيران يأتيان مع مكتبة الجدولة ولا يستعملهما التطبيق.
-    أبقيناهما ولم نحذفهما لأن حذف إذن تعتمد عليه مكتبة داخلياً يُسقطها
-    وقت التشغيل — وذِكرهما هنا أصدق من إخفائهما.
+    <code>ACCESS_NETWORK_STATE</code> و<code>FOREGROUND_SERVICE</code> يأتيان
+    مع مكتبة الجدولة ولا يستعملهما التطبيق. أبقيناهما ولم نحذفهما لأن حذف
+    إذن تعتمد عليه مكتبة داخلياً يُسقطها وقت التشغيل — وذِكرهما هنا أصدق
+    من إخفائهما.
+  </p>
+
+  <h2>الشراء داخل التطبيق</h2>
+  <p>
+    فتح المنهج الكامل عملية شراء واحدة تتمّ عبر <strong>متجر Google
+    Play</strong>، لا عبر خادم لنا — إذ لا خادم لنا أصلاً.
+  </p>
+  <ul>
+    <li><strong>لا نرى بيانات دفعك.</strong> رقم بطاقتك واسمك وعنوانك تبقى
+    عند جوجل، ولا يصل التطبيق منها شيء. كل ما يعرفه التطبيق جوابٌ بنعم أو
+    لا: «هل اشترى هذا الحساب المنتج؟»</li>
+    <li><strong>لا نعرف من أنت.</strong> لا يصلنا بريدك ولا معرّف حسابك
+    في جوجل.</li>
+    <li><strong>الحالة تُحفَظ في جهازك</strong> (نعم/لا) كي يعمل التطبيق
+    بلا اتصال.</li>
+    <li><strong>الاستعادة</strong> تسأل Play عن مشترياتك السابقة على
+    الحساب نفسه، ولا تُرسل شيئاً عنك إلى أي جهة أخرى.</li>
+  </ul>
+  <p>
+    ولأن فوترة Play تتمّ بالتخاطب مع تطبيق المتجر على جهازك (IPC) لا عبر
+    الشبكة مباشرةً، <strong>يبقى التطبيق بلا إذن <code>INTERNET</code></strong>
+    كما هو موصوف أعلاه. وتخضع عملية الشراء نفسها لسياسة خصوصية جوجل وشروط
+    متجر Play.
   </p>
 
   <h2>تشغيل الكود</h2>
@@ -325,11 +353,23 @@
       could not use it, having no internet permission.</li>
       <li><code>FOREGROUND_SERVICE</code> — declared by the same library. This
       app runs no foreground service.</li>
+      <li><code>com.android.vending.BILLING</code> — completing the one-time
+      purchase through the Play Store. Used for nothing else, and grants no
+      network access.</li>
     </ul>
     <p>The last two come with the scheduling library and are unused by the app.
     We kept them rather than removing them, because stripping a permission a
     library depends on internally breaks it at runtime — and listing them here
     is more honest than hiding them.</p>
+
+    <p><strong>In-app purchase.</strong> Unlocking the full curriculum is a
+    one-time purchase handled entirely by <strong>Google Play</strong>, not by
+    a server of ours — we have none. Your card, name and address stay with
+    Google; the app only ever learns a yes/no answer to "has this account
+    bought the product?". We never learn who you are. Because Play billing
+    talks to the Store app on your device over IPC rather than the network,
+    the app still holds no <code>INTERNET</code> permission. The purchase
+    itself is governed by Google's privacy policy and the Play Store terms.</p>
 
     <p><strong>Running code.</strong> Code you write executes locally in an
     isolated environment on your device, with no access to your files, the
